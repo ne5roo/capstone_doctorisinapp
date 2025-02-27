@@ -38,7 +38,7 @@ class _FeedbackPageState extends State<FeedbackPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Feedback Page'),
+        title: const Text('Feedback'),
         centerTitle: true, // Center the AppBar title
       ),
       body: Center(

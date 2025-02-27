@@ -2,6 +2,8 @@ import 'package:flutter/material.dart'; // Severely Incomplete have not polished
 import 'main_page.dart'; // Import MainPage
 
 class FeedbackPage extends StatefulWidget {
+  const FeedbackPage({super.key});
+
   @override
   _FeedbackPageState createState() => _FeedbackPageState();
 }

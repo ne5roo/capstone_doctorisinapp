@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart'; // Severely Incomplete have not polished yet need to integrate after summary page
+import 'package:flutter/material.dart'; 
 import 'main_page.dart'; // Import MainPage
 
 class FeedbackPage extends StatefulWidget {
@@ -64,7 +64,7 @@ class _FeedbackPageState extends State<FeedbackPage> {
                   controller: _feedbackController,
                   maxLines: 5,
                   decoration: InputDecoration(
-                    labelText: 'Put your Feed back Here....',
+                    labelText: 'Put your Feedback Here....',
                     border: OutlineInputBorder(),
                   ),
                   validator: (value) {

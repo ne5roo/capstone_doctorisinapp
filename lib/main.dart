@@ -11,7 +11,8 @@ import 'settings_page.dart'; // Import the SettingsPage
 import 'package:provider/provider.dart';
 import 'providers/profile_image_provider.dart';
 
-void main() {
+void main() async {
+
   runApp(
     MultiProvider(
       providers: [
@@ -43,7 +44,6 @@ class MyApp extends StatelessWidget {
           bodySmall: TextStyle(color: Colors.black),  // Corrected text theme
         ),
       ),
-      
       home: const SplashScreen(), // Initial splash or subscription page
       routes: {
         '/ageVerification': (context) => const AgeVerificationPage(), // Age Verification
@@ -56,7 +56,6 @@ class MyApp extends StatelessWidget {
         '/chat': (context) => ChatInterfacePage(), // Chat Interface Page
         '/help': (context) => HelpPage(), // Help Page
         '/settings': (context) => SettingsPage(), // Settings Page
-        
       },
     );
   }

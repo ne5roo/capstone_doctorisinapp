@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'summary.dart';
 import 'providers/profile_image_provider.dart';
+import 'api/gemini_api_service.dart'; // Import the GeminiApiService
 
 class ChatInterfacePage extends StatefulWidget {
   const ChatInterfacePage({super.key});
@@ -23,7 +24,9 @@ class _ChatInterfacePageState extends State<ChatInterfacePage> {
     '😀', '😁', '😂', '🤣', '😃', '😄', '😅', '😆', '😉', '😊', '😋', '😎', '😍', '😘', '🥰', '😗', '😙', '😚', '🙂', '🤗', '🤩', '🤔', '🤨', '😐', '😑', '😶', '🙄', '😏', '😣', '😥', '😮', '🤐', '😯', '😪', '😫', '🥱', '😴', '😌', '😛', '😜', '😝', '🤤', '😒', '😓', '😔', '😕', '🙃', '🤑', '😲', '☹️', '🙁', '😖', '😞', '😟', '😤', '😢', '😭', '😦', '😧', '😨', '😩', '🤯', '😬', '😰', '😱', '🥵', '🥶', '😳', '🤪', '😵', '😡', '😠', '🤬', '😷', '🤒', '🤕', '🤢', '🤮', '🤧', '😇', '🥳', '🥺', '🤠', '🤡', '🤥', '🤫', '🤭', '🧐', '🤓', '😈', '👿', '👹', '👺', '💀', '👻', '👽', '👾', '🤖', '🎃', '😺', '😸', '😹', '😻', '😼', '😽', '🙀', '😿', '😾'
   ];
 
-  void _sendMessage() {
+  final GeminiApiService geminiApiService = GeminiApiService(apiKey: 'AIzaSyAUKaPSnbTLdcXcvegsD-nwACL9rtqAXWs');
+
+  Future<void> _sendMessage() async {
     if (_controller.text.trim().isEmpty) return;
 
     setState(() {
@@ -32,29 +35,19 @@ class _ChatInterfacePageState extends State<ChatInterfacePage> {
         'text': _controller.text.trim(),
       });
       _isTyping = true;
-
-      Future.delayed(const Duration(seconds: 2), () {
-        setState(() {
-          _messages.add({
-            'sender': 'doctor',
-            'text': _generateBotResponse(_controller.text.trim()),
-          });
-          _isTyping = false;
-        });
-      });
     });
 
-    _controller.clear();
-  }
+    String botResponse = await geminiApiService.getResponse(_controller.text.trim());
 
-  String _generateBotResponse(String userMessage) {
-    if (userMessage.contains('sad') || userMessage.contains('depressed')) {
-      return 'I\'m sorry to hear that. It\'s important to talk to someone who can help. Have you considered speaking to a therapist?';
-    } else if (userMessage.contains('headache') || userMessage.contains('pain')) {
-      return 'I\'m sorry you\'re experiencing pain. Make sure to rest and stay hydrated. If the pain persists, please consult a doctor.';
-    } else {
-      return 'Thank you for sharing that. Let’s talk more about it.';
-    }
+      setState(() {
+        _messages.add({
+          'sender': 'doctor',
+          'text': botResponse,
+        });
+        _isTyping = false;
+      });
+
+    _controller.clear();
   }
 
   void _toggleEmojis() {

@@ -38,8 +38,8 @@ class _SplashScreenState extends State<SplashScreen> {
             // Image to display on splash screen with a bigger size
             Image.asset(
               'assets/ekids1.png', // Ensure your image is in the assets folder
-              height: 300, // Adjust the height to make the image bigger
-              width: 300,  // Adjust the width as well
+              height: 350, // Adjust the height to make the image bigger
+              width: 350,  // Adjust the width as well
             ),
             const SizedBox(height: 20),
             // New Loading Animation

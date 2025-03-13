@@ -39,7 +39,7 @@ class HelpPage extends StatelessWidget {
             ),
             SizedBox(height: 20),
             Text(
-              'The Doctor is in App is an application that connects you to a health professional for any sort of health problem.',
+              'The Doctor is in App is an application that connects you to a health professional for any sort of health concern.',
               style: TextStyle(fontSize: 16),
             ),
             SizedBox(height: 10),
@@ -55,6 +55,7 @@ class HelpPage extends StatelessWidget {
           ],
         ),
       ),
+      bottomNavigationBar: const CustomBottomNavBar(),
     );
   }
 }

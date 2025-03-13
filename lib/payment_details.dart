@@ -47,9 +47,9 @@ class _PaymentFormPageState extends State<PaymentFormPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.amber[100],
+      backgroundColor: Color(0xFFD0F0C0),
       appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 231, 208, 165),
+        backgroundColor: const Color(0xFFD0F0C0),
         title: const Text('Secure Payment Form'),
         centerTitle: true,
       ),
@@ -235,15 +235,20 @@ class _PaymentFormPageState extends State<PaymentFormPage> {
                         const SizedBox(height: 30),
                         ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: const Color.fromARGB(255, 231, 208, 165),
+                            backgroundColor: Colors.white,
+                            elevation: 4, // Add elevation
+                            shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8),
+                            side: const BorderSide(color: Colors.black), // Add border
+                            ),
                             padding: const EdgeInsets.symmetric(vertical: 16),
                           ),
                           onPressed: _submitPayment,
-                          child: const Text(
+                          child: Text(
                             'CONFIRM PAYMENT',
                             style: TextStyle(
                               fontSize: 16,
-                              color: Color.fromARGB(255, 101, 67, 33),
+                              color: Colors.black,
                             ),
                           ),
                         ),

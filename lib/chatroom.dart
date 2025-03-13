@@ -71,7 +71,7 @@ class _ChatInterfacePageState extends State<ChatInterfacePage> {
             'The Doctor Is In',
           ),
         ),
-        backgroundColor: const Color(0xFFFEE4B3),
+        backgroundColor: const Color(0xFFD0F0C0),
         automaticallyImplyLeading: false, // Remove the back button
         actions: [
           IconButton(
@@ -85,7 +85,7 @@ class _ChatInterfacePageState extends State<ChatInterfacePage> {
           ),
         ],
       ),
-      backgroundColor: const Color(0xFFFEE4B3),
+      backgroundColor: const Color(0xFFD0F0C0),
       body: Column(
         children: [
           Expanded(
@@ -185,7 +185,7 @@ class _ChatInterfacePageState extends State<ChatInterfacePage> {
                 ElevatedButton(
                   onPressed: _sendMessage,
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFFFEE4B3),
+                    backgroundColor: Colors.white,
                     elevation: 4,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8),

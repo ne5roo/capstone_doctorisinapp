@@ -1,48 +1,45 @@
 import 'package:doctorisinapp/profile_page.dart';
 import 'package:flutter/material.dart';
 
-import 'login.dart'; // Import the LoginPage
-
 class CustomBottomNavBar extends StatelessWidget {
   const CustomBottomNavBar({super.key});
 
   @override
   Widget build(BuildContext context) {
     return BottomAppBar(
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          IconButton(
-            icon: const Icon(Icons.exit_to_app), // Logout Icon
-            onPressed: () {
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(builder: (context) => const LoginPage()),
-              );
-            },
-          ),
-          IconButton(
-            icon: const Icon(Icons.settings), // Settings Icon
-            onPressed: () {
-              Navigator.pushNamed(context, '/settings');
-            },
-          ),
-          IconButton(
-            icon: const Icon(Icons.info_outline), // Help Icon
-            onPressed: () {
-              Navigator.pushNamed(context, '/help');
-            },
-          ),
-          IconButton(
-            icon: const Icon(Icons.person), // Profile Icon
-            onPressed: () {
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(builder: (context) => ProfilePage()),
-              );
-            },
-          ),
-        ],
+      shape: const CircularNotchedRectangle(),
+      clipBehavior: Clip.antiAlias,
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(8), // Add border radius
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            // Remove the logout button
+            IconButton(
+              icon: const Icon(Icons.settings), // Settings Icon
+              onPressed: () {
+                Navigator.pushNamed(context, '/settings');
+              },
+            ),
+            IconButton(
+              icon: const Icon(Icons.info_outline), // Help Icon
+              onPressed: () {
+                Navigator.pushNamed(context, '/help');
+              },
+            ),
+            IconButton(
+              icon: const Icon(Icons.person), // Profile Icon
+              onPressed: () {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => ProfilePage()),
+                );
+              },
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -74,14 +71,14 @@ class MainPage extends StatelessWidget {
               height: 200,
               width: 200,
               fit: BoxFit.cover,
-            ),
+            ), 
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
                 Navigator.pushNamed(context, '/chat'); // Redirect to chatroom
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xFFFEE4B3), // Match button color
+                backgroundColor: Colors.white, // Match button color
                 elevation: 4, // Add elevation
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8),

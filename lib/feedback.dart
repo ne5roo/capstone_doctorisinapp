@@ -42,6 +42,7 @@ class _FeedbackPageState extends State<FeedbackPage> {
       appBar: AppBar(
         title: const Text('Feedback'),
         centerTitle: true, // Center the AppBar title
+        automaticallyImplyLeading: false, // Remove the back button
       ),
       body: Center(
         child: Padding(
@@ -101,7 +102,7 @@ class _FeedbackPageState extends State<FeedbackPage> {
                 ElevatedButton(
                   onPressed: _submitFeedback,
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFFFEE4B3), // Match button color
+                    backgroundColor: Colors.white, // Match button color
                     elevation: 4, // Add elevation
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8),

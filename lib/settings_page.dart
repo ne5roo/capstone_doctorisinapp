@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'login.dart';
 import 'main_page.dart'; // Import MainPage
 
 
@@ -25,9 +26,9 @@ class _SettingsPageState extends State<SettingsPage> {
           : ThemeData(
               primarySwatch: Colors.blue,
               appBarTheme: const AppBarTheme(
-                backgroundColor: Color(0xFFFEE4B3), // Consistent AppBar color
+                backgroundColor: Color(0xFFD0F0C0), // Consistent AppBar color
               ),
-              scaffoldBackgroundColor: Color(0xFFFEE4B3), // Matches MainPage
+              scaffoldBackgroundColor: Color(0xFFD0F0C0), // Matches MainPage
             ),
       debugShowCheckedModeBanner: false,
       home: Scaffold(
@@ -88,6 +89,31 @@ class _SettingsPageState extends State<SettingsPage> {
                   _isDarkMode = value;
                 });
               },
+            ),
+            const SizedBox(height: 20), // Add some space before the logout button
+            Center(
+              child: ElevatedButton(
+                onPressed: () {
+                  // Handle logout logic here
+                  print('Logout successful');
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => LoginPage()),
+                  );
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.white, // Match button color
+                  elevation: 4, // Add elevation
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8),
+                    side: const BorderSide(color: Colors.black), // Add border
+                  ),
+                ),
+                child: const Text(
+                  'Logout',
+                  style: TextStyle(color: Colors.black), // Set text color to black
+                ),
+              ),
             ),
           ],
         ),

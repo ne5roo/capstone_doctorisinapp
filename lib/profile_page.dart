@@ -61,7 +61,8 @@ class _ProfilePageState extends State<ProfilePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Profile Page"),
-        backgroundColor: Color(0xFFFEE4B3), // Consistent AppBar color
+        centerTitle: true, // Center the AppBar title
+        backgroundColor: Color(0xFFD0F0C0), // Consistent AppBar color
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
           onPressed: () {
@@ -149,7 +150,7 @@ class _ProfilePageState extends State<ProfilePage> {
               ElevatedButton(
                 onPressed: toggleEditing,
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xFFFEE4B3), // Match button color
+                  backgroundColor: Colors.white, // Match button color
                   elevation: 4, // Add elevation
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8),
@@ -167,7 +168,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   child: ElevatedButton(
                     onPressed: saveProfile,
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0xFFFEE4B3), // Match button color
+                      backgroundColor: Colors.white, // Match button color
                       elevation: 4, // Add elevation
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8),
@@ -184,6 +185,7 @@ class _ProfilePageState extends State<ProfilePage> {
           ),
         ),
       ),
+      bottomNavigationBar: const CustomBottomNavBar(),
     );
   }
 

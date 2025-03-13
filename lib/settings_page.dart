@@ -1,6 +1,5 @@
 import 'package:doctorisinapp/subscription_page.dart';
 import 'package:flutter/material.dart';
-import 'login.dart';
 import 'main_page.dart'; // Import MainPage
 
 

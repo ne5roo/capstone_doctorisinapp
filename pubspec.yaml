@@ -57,6 +57,7 @@ flutter:
     - assets/Profile pics/Rabbit.jpeg
     - assets/Profile pics/Dog.jpeg
     - assets/Profile pics/Fox.jpeg
+    - assets/payment_secure.png
 
   fonts:
     - family: ComicSansMS

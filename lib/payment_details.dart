@@ -71,8 +71,12 @@ class _PaymentFormPageState extends State<PaymentFormPage> {
                         const SizedBox(height: 30),
                         Center(
                           child: Image.asset(
-                            'assets/card_image.png',
-                            height: 120,
+                            'assets/payment_secure.png',
+                            height: 130,
+                            width: 130,
+                            errorBuilder: (context, error, stackTrace) {
+                              return const Text('Image not found');
+                            },
                           ),
                         ),
                         const SizedBox(height: 30),
@@ -193,10 +197,14 @@ class _PaymentFormPageState extends State<PaymentFormPage> {
                               child: TextFormField(
                                 controller: _expiryController,
                                 decoration: const InputDecoration(
-                                  labelText: 'MM/YY',
+                                  labelText: 'MMYY',
                                   border: OutlineInputBorder(),
                                 ),
                                 keyboardType: TextInputType.datetime,
+                                inputFormatters: [
+                                  LengthLimitingTextInputFormatter(4), // Allow only 4 digits
+                                  FilteringTextInputFormatter.digitsOnly, // Allow only numerical values
+                                ],
                                 validator: (value) {
                                   if (value == null || value.isEmpty) {
                                     return 'Please enter the expiry date';
@@ -236,15 +244,15 @@ class _PaymentFormPageState extends State<PaymentFormPage> {
                         ElevatedButton(
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.white,
+                            padding: const EdgeInsets.symmetric(vertical: 16),
                             elevation: 4, // Add elevation
                             shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8),
-                            side: const BorderSide(color: Colors.black), // Add border
+                              borderRadius: BorderRadius.circular(8),
+                              side: const BorderSide(color: Colors.black),
                             ),
-                            padding: const EdgeInsets.symmetric(vertical: 16),
                           ),
                           onPressed: _submitPayment,
-                          child: Text(
+                          child: const Text(
                             'CONFIRM PAYMENT',
                             style: TextStyle(
                               fontSize: 16,

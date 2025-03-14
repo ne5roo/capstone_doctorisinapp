@@ -52,7 +52,7 @@ class _PaymentFormPageState extends State<PaymentFormPage> {
         backgroundColor: const Color(0xFFD0F0C0),
         title: const Text('Secure Payment Form'),
         centerTitle: true,
-      ),
+      ),  // AppBar
       body: LayoutBuilder(
         builder: (context, constraints) {
           return SingleChildScrollView(
@@ -147,7 +147,7 @@ class _PaymentFormPageState extends State<PaymentFormPage> {
                                   }
                                   return null;
                                 },
-                              ),
+                              ), // DropdownButtonFormField
                             ),
                             const SizedBox(width: 16),
                             Flexible(
@@ -269,6 +269,6 @@ class _PaymentFormPageState extends State<PaymentFormPage> {
           );
         },
       ),
-    );
+    );  // Scaffold 
   }
 }

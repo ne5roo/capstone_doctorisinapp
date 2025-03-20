@@ -24,6 +24,7 @@ dependencies:
     sdk: flutter
   provider: ^6.1.2
   flutter_markdown: ^0.7.6+2
+  url_launcher: ^6.0.20 # for opening links
 
 dev_dependencies:
   flutter_test:

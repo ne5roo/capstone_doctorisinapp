@@ -9,7 +9,15 @@ class SummaryPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color(0xFFD0F0C0),  // Applying your custom color here
       appBar: AppBar(
-        title: const Text('The Doctor Is In Summary'),
+        title: const Text(
+          'The Doctor Is In Summary',
+          style: TextStyle(
+            fontSize: 24, 
+            fontWeight: FontWeight.bold, 
+            fontStyle: FontStyle.italic, 
+            fontFamily: 'ComicSansMS' // Change font style to ComicSansMS
+          ), 
+        ),
         centerTitle: true, // Center the AppBar title
         backgroundColor: const Color(0xFFD0F0C0),  // Applying your custom color to the AppBar
         automaticallyImplyLeading: false, // Remove the back button
@@ -66,5 +74,5 @@ class SummaryPage extends StatelessWidget {
 void main() {
   runApp(const MaterialApp(
     home: SummaryPage(),
-   ));
+    ));
 }

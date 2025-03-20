@@ -39,7 +39,14 @@ class _RegistrationPageState extends State<RegistrationPage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color(0xFFD0F0C0), // Set AppBar color to light brown
-        title: const Text('Register'),
+        title: const Text(
+          'Register',
+          style: TextStyle(
+            fontFamily: 'ComicSansMS', // Set font family
+            fontSize: 24, // Set font size
+            fontWeight: FontWeight.bold, // Set font weight
+          ),
+        ),
         centerTitle: true, // Center the AppBar title
       ),
       backgroundColor: const Color(0xFFD0F0C0), // Light brown background color

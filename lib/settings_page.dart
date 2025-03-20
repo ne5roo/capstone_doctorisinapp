@@ -33,7 +33,13 @@ class _SettingsPageState extends State<SettingsPage> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Settings'),
+          title: Text(
+            'Settings',
+            style: TextStyle(
+              fontFamily: 'ComicSansMS', // Set font to ComicSansMS
+              fontWeight: FontWeight.bold, // Make the font bold
+            ),
+          ),
           centerTitle: true, // Center the AppBar title
           leading: IconButton(
             icon: Icon(Icons.arrow_back),

@@ -60,7 +60,14 @@ class _ProfilePageState extends State<ProfilePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Profile Page"),
+        title: Text(
+          "Profile Page",
+          style: TextStyle(
+            fontFamily: 'ComicSansMS', // Specify the font family
+            fontSize: 24, // Specify the font size
+            fontWeight: FontWeight.bold, // Specify the font weight
+          ),
+        ),
         centerTitle: true, // Center the AppBar title
         backgroundColor: Color(0xFFD0F0C0), // Consistent AppBar color
         leading: IconButton(

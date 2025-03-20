@@ -68,7 +68,15 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Welcome')),
+      appBar: AppBar(
+        title: const Text(
+          'Welcome',
+          style: TextStyle(
+            fontFamily: 'ComicSansMS', // Set font style to ComicSansMS
+            fontWeight: FontWeight.bold, // Make the font bold
+          ),
+        ),
+      ),
       body: const Center(
         child: Text('You are successfully verified and logged in!'),
       ),

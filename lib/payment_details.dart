@@ -50,7 +50,14 @@ class _PaymentFormPageState extends State<PaymentFormPage> {
       backgroundColor: Color(0xFFD0F0C0),
       appBar: AppBar(
         backgroundColor: const Color(0xFFD0F0C0),
-        title: const Text('Secure Payment Form'),
+        title: const Text(
+          'Secure Payment Form',
+          style: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+            fontFamily: 'ComicSansMS', // Specify the font family
+          ),
+        ),
         centerTitle: true,
       ),  // AppBar
       body: LayoutBuilder(

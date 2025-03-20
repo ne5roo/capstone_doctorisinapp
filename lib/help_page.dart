@@ -27,7 +27,13 @@ class HelpPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Help and Support'),
+        title: const Text(
+          'Help and Support',
+          style: TextStyle(
+            fontFamily: 'ComicSansMS', // Set font to ComicSansMS
+            fontWeight: FontWeight.bold, // Make the font bold
+          ),
+        ),
         centerTitle: true,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),

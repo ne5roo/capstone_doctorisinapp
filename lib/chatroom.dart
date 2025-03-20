@@ -69,6 +69,10 @@ class _ChatInterfacePageState extends State<ChatInterfacePage> {
         title: Center(
           child: const Text(
             'The Doctor Is In',
+            style: TextStyle(
+              fontFamily: 'ComicSansMS',
+              fontWeight: FontWeight.bold, // Make the font bold
+            ),
           ),
         ),
         backgroundColor: const Color(0xFFD0F0C0),

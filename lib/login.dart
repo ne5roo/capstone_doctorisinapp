@@ -50,7 +50,14 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
       backgroundColor: const Color(0xFFD0F0C0),  // Light brown background color
       appBar: AppBar(
-        title: const Text('Login'),
+        title: const Text(
+          'Login',
+          style: TextStyle(
+            fontFamily: 'ComicSansMS', // Specify the font family
+            fontWeight: FontWeight.bold, // Make the font bold
+            fontSize: 24, // Set the font size
+          ),
+        ),
         centerTitle: true,  // Center the AppBar title
         backgroundColor: const Color(0xFFD0F0C0),  // Consistent AppBar color
       ),

@@ -40,7 +40,14 @@ class _FeedbackPageState extends State<FeedbackPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Feedback'),
+        title: const Text(
+          'Feedback',
+          style: TextStyle(
+            fontFamily: 'ComicSansMS', // Set the font family
+            fontWeight: FontWeight.bold, // Set the font weight
+            fontSize: 24, // Set the font size
+          ),
+        ),
         centerTitle: true, // Center the AppBar title
         automaticallyImplyLeading: false, // Remove the back button
       ),

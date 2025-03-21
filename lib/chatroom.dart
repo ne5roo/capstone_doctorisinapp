@@ -24,7 +24,7 @@ class _ChatInterfacePageState extends State<ChatInterfacePage> {
     '😀', '😁', '😂', '🤣', '😃', '😄', '😅', '😆', '😉', '😊', '😋', '😎', '😍', '😘', '🥰', '😗', '😙', '😚', '🙂', '🤗', '🤩', '🤔', '🤨', '😐', '😑', '😶', '🙄', '😏', '😣', '😥', '😮', '🤐', '😯', '😪', '😫', '🥱', '😴', '😌', '😛', '😜', '😝', '🤤', '😒', '😓', '😔', '😕', '🙃', '🤑', '😲', '☹️', '🙁', '😖', '😞', '😟', '😤', '😢', '😭', '😦', '😧', '😨', '😩', '🤯', '😬', '😰', '😱', '🥵', '🥶', '😳', '🤪', '😵', '😡', '😠', '🤬', '😷', '🤒', '🤕', '🤢', '🤮', '🤧', '😇', '🥳', '🥺', '🤠', '🤡', '🤥', '🤫', '🤭', '🧐', '🤓', '😈', '👿', '👹', '👺', '💀', '👻', '👽', '👾', '🤖', '🎃', '😺', '😸', '😹', '😻', '😼', '😽', '🙀', '😿', '😾'
   ];
 
-  final GeminiApiService geminiApiService = GeminiApiService(apiKey: 'AIzaSyDbBMmeZxEf_ZSij6ZZfmoE8Z-CJh3PwDY');
+  final GeminiApiService geminiApiService = GeminiApiService(apiKey: 'AIzaSyAUKaPSnbTLdcXcvegsD-nwACL9rtqAXWs');
 
   Future<void> _sendMessage() async {
     if (_controller.text.trim().isEmpty) return;
@@ -35,6 +35,7 @@ class _ChatInterfacePageState extends State<ChatInterfacePage> {
         'text': _controller.text.trim(),
       });
       _isTyping = true;
+      _showEmojis = false; // Close the emoji list
     });
 
     String botResponse = await geminiApiService.getResponse(_controller.text.trim());
@@ -66,14 +67,19 @@ class _ChatInterfacePageState extends State<ChatInterfacePage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Center(
-          child: const Text(
-            'The Doctor Is In',
-            style: TextStyle(
-              fontFamily: 'ComicSansMS',
-              fontWeight: FontWeight.bold, // Make the font bold
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text(
+              'The Doctor Is In',
             ),
-          ),
+            const SizedBox(width: 8),
+            Image.asset(
+              'assets/ekids1.png', // Move the ekids1.png asset here
+              height: 70,
+              width: 70,
+            ),
+          ],
         ),
         backgroundColor: const Color(0xFFD0F0C0),
         automaticallyImplyLeading: false, // Remove the back button
@@ -208,10 +214,4 @@ class _ChatInterfacePageState extends State<ChatInterfacePage> {
       ),
     );
   }
-}
-
-void main() {
-  runApp(const MaterialApp(
-    home: ChatInterfacePage(),
-  ));
 }
